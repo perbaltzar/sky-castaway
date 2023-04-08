@@ -1,0 +1,16 @@
+{
+  "name": "shader-test",
+  "version": "0.0.1",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "dev": "code-kit dev --open",
+    "upload": "code-kit upload",
+    "token": "Opez-fEl5NtQiVyJw9wRzxeaCuQ9qeV8T4qvK"
+  },
+  "dependencies": {
+    "@hiberworld/code-kit": "latest",
+    "@hiberworld/code-kit-cli": "latest",
+    "@hiberworld/code-kit-utils": "latest"
+  }
+}

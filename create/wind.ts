@@ -1,0 +1,61 @@
+import { create, Material } from "@hiberworld/code-kit";
+import { ColliderForm } from "./flyBlock";
+
+export const createWind = ({ debug }: { debug?: boolean }) => {
+  const group = create({ rotX: 90, y: 4 });
+  group.addMany(18, (index) => {
+    const rotateOffset = (360 / 5 / 15) * index;
+    return create({
+      scale: 3,
+      rendering: {
+        meshID: "en_b_torus_thin_01",
+        materialID: "particle_cloud" as Material,
+      },
+    }).animate(
+      {
+        y: [0, 4, 8],
+        scale: [0.1, 0.4, 1.1],
+        rotY: [0 + rotateOffset, 180 + rotateOffset, 360 + rotateOffset],
+      },
+      {
+        loop: "RESTART",
+        duration: 2,
+        startAt: (1 / 15) * index,
+        easing: "LINEAR",
+      }
+    );
+  });
+  const wind = create({
+    colliderIsSensor: { dummy: false },
+    accelerationVolume: {
+      maxSpeed: 20,
+      stickToCenterSpeedFactor: 1000,
+      dir: [0, 1, 0],
+      stickToCenterDamping: 100,
+      acceleration: 200,
+    },
+
+    scale: 3,
+    scaleY: 10,
+    collider: {
+      canGenerateEvent: true,
+      collider: {
+        form: ColliderForm.mesh,
+        meshId: "en_b_cylinder_01",
+        size: [1, 1, 1],
+        offset: [0, 0, 0],
+      },
+      collisionMask: 32,
+    },
+    rendering: debug
+      ? {
+          meshID: "en_b_cylinder_01",
+          materialID: "palette_01_green",
+        }
+      : undefined,
+  });
+
+  group.add(wind);
+
+  return group;
+};
