@@ -9,8 +9,8 @@
     "token": "Opez-fEl5NtQiVyJw9wRzxeaCuQ9qeV8T4qvK"
   },
   "dependencies": {
-    "@hiberworld/code-kit": "latest",
-    "@hiberworld/code-kit-cli": "latest",
-    "@hiberworld/code-kit-utils": "latest"
+    "@hiberworld/code-kit": "^3.16.2",
+    "@hiberworld/code-kit-cli": "^0.4.12",
+    "@hiberworld/code-kit-utils": "^2.6.2"
   }
 }

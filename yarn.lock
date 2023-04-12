@@ -340,66 +340,46 @@
   resolved "https://registry.yarnpkg.com/@esbuild/win32-x64/-/win32-x64-0.17.14.tgz#e81fb49de05fed91bf74251c9ca0343f4fc77d31"
   integrity sha512-gPQmsi2DKTaEgG14hc3CHXHp62k8g6qr0Pas+I4lUxRMugGSATh/Bi8Dgusoz9IQ0IfdrvLpco6kujEIBoaogA==
 
-"@hiberworld/code-kit-assets@^1.0.10":
-  version "1.0.10"
-  resolved "https://registry.yarnpkg.com/@hiberworld/code-kit-assets/-/code-kit-assets-1.0.10.tgz#f4d19aeafd6811556ed8ba172dca8f1e105890fc"
-  integrity sha512-TUoM6cKPKpMCUZB3JY3qLdgZO7hyp2DkoWcsvXTtSbxTke/ZsuUk6hfAIdLZLmNzitmY+3HC5Crf+Accl1ysYA==
+"@hiberworld/code-kit-assets@^1.1.0":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@hiberworld/code-kit-assets/-/code-kit-assets-1.1.0.tgz#813b83f8ce346ad5f6f8da4dc2889b361f3b2437"
+  integrity sha512-6/eiwz4BSOOym/3nULvpKZNxTamsLjWWUDGOsWfbTZY1qurnogtEQyjh0BPl23BcoKeHYfY8I99+uCjqjbaSiA==
 
-"@hiberworld/code-kit-cli@latest":
+"@hiberworld/code-kit-cli@^0.4.12":
   version "0.4.12"
   resolved "https://registry.yarnpkg.com/@hiberworld/code-kit-cli/-/code-kit-cli-0.4.12.tgz#1a15909f463b7839349ac3261a351333199fd955"
   integrity sha512-DmkmrwltErj87/OyhFrBT2MemUYMiYA9daxOjgp4BGttpaejUyO1hUpfVyiVGadyu1ENtRsNshxL5WK/yXjJ9Q==
   dependencies:
     vite "^4.2.1"
 
-"@hiberworld/code-kit-utils@latest":
-  version "2.5.9"
-  resolved "https://registry.yarnpkg.com/@hiberworld/code-kit-utils/-/code-kit-utils-2.5.9.tgz#ae032cb96f4641290a8c58d0c9898bb0a7cc11e7"
-  integrity sha512-xdJK7//hv3sEC8pDiwo6VJdVeDOirjCR6hqXxxv84kuhVmQi0S4W68jwmaQONDAVcLjxCWoOfs6+72p7gaxEUQ==
+"@hiberworld/code-kit-utils@^2.6.2":
+  version "2.6.2"
+  resolved "https://registry.yarnpkg.com/@hiberworld/code-kit-utils/-/code-kit-utils-2.6.2.tgz#c95b2fe17f0da9232d6d7c374edd9846bc37b775"
+  integrity sha512-MSGTEmcNdlNj71I33/4wUL8jguUmEC9AkBV2Q7Gg2KqTyrERNjHxzEOyRz0SOkWi2O27wEr3PQHbGXZrwTl/Jg==
   dependencies:
-    "@hiberworld/code-kit" "^3.15.1"
+    "@hiberworld/code-kit" "^3.16.2"
     add "^2.0.6"
-    lodash "^4.17.21"
+    lodash-es "^4.17.21"
 
-"@hiberworld/code-kit@^3.15.1":
-  version "3.15.1"
-  resolved "https://registry.yarnpkg.com/@hiberworld/code-kit/-/code-kit-3.15.1.tgz#af32923625fa836e319904eb60ce7dbb0d9d23d8"
-  integrity sha512-8Ftd7KlSF95SkUwjtDKhBbDSZjRi9fBb7QXbQ0joyvPjs1bqpXsQajZd1d1JNUsh+vs16X+IZ3v4Q01woQd8IQ==
+"@hiberworld/code-kit@^3.16.2":
+  version "3.16.2"
+  resolved "https://registry.yarnpkg.com/@hiberworld/code-kit/-/code-kit-3.16.2.tgz#cc76a66e71e66bc26d145067897c768a171b9e50"
+  integrity sha512-Z095u3ToZGLKjR6bd8nZB3Zf9rg9JLRo/z3xPpkAYNzKzDaanaGuZRr9U/xfsI8Dd40lJOoXQSVZTrJ8RJ2J4Q==
   dependencies:
     "@changesets/cli" "^2.26.1"
-    "@hiberworld/code-kit-assets" "^1.0.10"
-    "@hiberworld/engine" "^1.25.0"
+    "@hiberworld/code-kit-assets" "^1.1.0"
+    "@hiberworld/engine" "^1.26.1"
     "@types/clone-deep" "^4.0.1"
     clone-deep "^4.0.1"
     gl-matrix "^3.4.3"
-    lodash "^4.17.21"
+    lodash-es "^4.17.21"
     nanoid "^4.0.2"
     ts-xor "^1.1.0"
 
-"@hiberworld/code-kit@latest":
-  version "3.16.1"
-  resolved "https://registry.yarnpkg.com/@hiberworld/code-kit/-/code-kit-3.16.1.tgz#d427d2d2c694b3ef68009aad8365e88a3c7ff5ee"
-  integrity sha512-CE9TyvsNPMvovl9rCfz6bhSGgH16cr/cY1TyPBa7wI9E/97nmY6Yq8u2YLHKMGYKI0iejTWASn9d9P3c6z7KeA==
-  dependencies:
-    "@changesets/cli" "^2.26.1"
-    "@hiberworld/code-kit-assets" "^1.0.10"
-    "@hiberworld/engine" "^1.26.0"
-    "@types/clone-deep" "^4.0.1"
-    clone-deep "^4.0.1"
-    gl-matrix "^3.4.3"
-    lodash "^4.17.21"
-    nanoid "^4.0.2"
-    ts-xor "^1.1.0"
-
-"@hiberworld/engine@^1.25.0":
-  version "1.25.0"
-  resolved "https://registry.yarnpkg.com/@hiberworld/engine/-/engine-1.25.0.tgz#66f7be49914c34aeafe533ec04c6416c0233a2b4"
-  integrity sha512-5HTOyLpGfKqQALHEQizGCLpLRZmtHR0jgzdu52pgaFvDrsiSBbA//p4x9gBhd+t3clcshuQyCsRfuhOE6128fw==
-
-"@hiberworld/engine@^1.26.0":
-  version "1.26.0"
-  resolved "https://registry.yarnpkg.com/@hiberworld/engine/-/engine-1.26.0.tgz#a69ef5b8dc7d93377b74e3eacf7fcae2d24e8146"
-  integrity sha512-xWRoSCPpufAn457PvpJVXqsEdcNyFIVTGA/cs0cuwJ/GWHI6LEc9VZV33FNkqL5L8VzApLisKpIZY4NIyme2hQ==
+"@hiberworld/engine@^1.26.1":
+  version "1.27.1"
+  resolved "https://registry.yarnpkg.com/@hiberworld/engine/-/engine-1.27.1.tgz#46d8a8da885c9da8fb6ef6f6d43e57ed28ae15bc"
+  integrity sha512-OZurg06zjd3IouUSWNZzlq9pABiNYAZk65ktNqoET0assmsyVA529NYZjJJmCO02RU5sWvTlWi7Z/uCkwUhsxg==
 
 "@manypkg/find-root@^1.1.0":
   version "1.1.0"
@@ -1376,15 +1356,15 @@ locate-path@^6.0.0:
   dependencies:
     p-locate "^5.0.0"
 
+lodash-es@^4.17.21:
+  version "4.17.21"
+  resolved "https://registry.yarnpkg.com/lodash-es/-/lodash-es-4.17.21.tgz#43e626c46e6591b7750beb2b50117390c609e3ee"
+  integrity sha512-mKnC+QJ9pWVzv+C4/U3rRsHapFfHvQFoFB92e52xeyGMcX6/OlIl78je1u8vePzYZSkkogMPJ2yjxxsb89cxyw==
+
 lodash.startcase@^4.4.0:
   version "4.4.0"
   resolved "https://registry.yarnpkg.com/lodash.startcase/-/lodash.startcase-4.4.0.tgz#9436e34ed26093ed7ffae1936144350915d9add8"
   integrity sha512-+WKqsK294HMSc2jEbNgpHpd0JfIBhp7rEV4aqXWqFr6AlXov+SlcgB1Fv01y2kGe3Gc8nMW7VA0SrGuSkRfIEg==
-
-lodash@^4.17.21:
-  version "4.17.21"
-  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.21.tgz#679591c564c3bffaae8454cf0b3df370c3d6911c"
-  integrity sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==
 
 lru-cache@^4.0.1:
   version "4.1.5"

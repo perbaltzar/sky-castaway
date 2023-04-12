@@ -1,4 +1,4 @@
-# shader-test
+# Castaway Part 1
 
 This is a [Hiber Code-Kit](https://github.com/HiberWorld/codekit) project created using [create-hiber-world](https://github.com/HiberWorld/codekit/packages/create-hiber-world)
 
