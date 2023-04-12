@@ -4,41 +4,40 @@ import {
   BALLOON_SECTION_Z,
   THUNDER_SECTION_X,
   THUNDER_SECTION_Z,
+  WIND_SECTION_X,
+  WIND_SECTION_Z,
 } from "./constants";
 import { createBallon } from "./create/ballons";
-import { createCrate } from "./create/crate";
 import { createSection } from "./create/section";
 import { createFloatBlock } from "./create/flyBlock";
 import { createCloud } from "./create/clouds";
 import { createWind } from "./create/wind";
 import { createBoard } from "./create/board";
-import { createBoat } from "./create/boat";
-import { createBarrel } from "./create/barrel";
-import { createBox } from "./create/box";
 import { addMapToSection } from "./utils/addMapToSection";
 import { createAnchor } from "./create/anchor";
 import { createThunderCloud } from "./create/thunderCloud";
 import { thunderSectionMap } from "./maps/thunderSection";
 import { balloonSectionMap } from "./maps/balloonSection";
+import { createWhirlwind } from "./create/whirlwind";
+import { createDebree } from "./create/debree";
 
-const debug = false;
+const debug = true;
 const debugThunder = false;
 
 const world = create();
 
 const scene: Scene = {
   root: world,
-  environment: "starry_night_01",
+  environment: "night_clouds_01",
 };
 
 // COMPONENTS
 const floatBlock = createFloatBlock({
   debug,
 });
-const board = createBoard();
+
 const spawnBoard = createBoard({ spawnpoint: true });
 const checkpointBoard = createBoard({ checkpoint: true });
-const crate = createCrate();
 const balloon = createBallon();
 const cloud = createCloud({ debug });
 const upLift = create({
@@ -49,12 +48,13 @@ const upLift = create({
   colliderIsSensor: { dummy: true },
 });
 const wind = createWind({ debug });
-const boat = createBoat();
+const whirlwind = createWhirlwind();
 const thunderCloud = createThunderCloud({ debug: debugThunder });
 
 // Decorations
-const barrel = createBarrel();
-const box = createBox();
+const barrel = createDebree("barrel_wood_01");
+const box = createDebree("crate_02");
+const bench = createDebree("bench_01_t1");
 const anchor = createAnchor();
 
 // FIRST SECTION BALLOON SECTION
@@ -78,14 +78,16 @@ balloonSection.add({
   z: -7,
   rotY: 340,
 });
+balloonSection.add({ ...whirlwind, x: 55, y: 20, z: -48 });
 balloonSection.add({ ...upLift, x: 9, rotY: -20, z: -1, scaleZ: 7 });
-balloonSection.add({ ...wind, rotY: 70, x: 50, z: -15 });
+balloonSection.add({ ...wind, rotY: 75, x: 58, z: -12 });
 
 addMapToSection(balloonSection, balloon, balloonSectionMap.balloon);
 addMapToSection(balloonSection, cloud, balloonSectionMap.cloud);
 addMapToSection(balloonSection, barrel, balloonSectionMap.barrel);
 addMapToSection(balloonSection, box, balloonSectionMap.box);
 addMapToSection(balloonSection, anchor, balloonSectionMap.anchor);
+addMapToSection(balloonSection, thunderCloud, balloonSectionMap.thunder);
 
 balloonSection.addTo(world);
 
@@ -102,11 +104,25 @@ const thunderSection = createSection({
 });
 
 thunderSection.add({ ...upLift, x: 3, scaleZ: 10 });
-
+thunderSection.add({ ...checkpointBoard, x: THUNDER_SECTION_X, z: 6 });
+thunderSection.add({ ...whirlwind, x: 55, y: 14, z: 24 });
 addMapToSection(thunderSection, thunderCloud, thunderSectionMap.thunder);
 addMapToSection(thunderSection, balloon, thunderSectionMap.balloon);
 addMapToSection(thunderSection, cloud, thunderSectionMap.cloud);
+addMapToSection(thunderSection, box, thunderSectionMap.box);
+addMapToSection(thunderSection, barrel, thunderSectionMap.barrel);
+addMapToSection(thunderSection, bench, thunderSectionMap.bench);
 
 thunderSection.addTo(world);
+// Wind Section
+const windStartX = BALLOON_SECTION_X + THUNDER_SECTION_X - 5;
 
+const windSection = createSection({
+  debug,
+  scaleZ: WIND_SECTION_Z,
+  scaleX: WIND_SECTION_X,
+  z: 90,
+  x: windStartX,
+});
+windSection.addTo(world);
 renderScene(scene);

@@ -64,7 +64,5 @@ export const createWhirlwind = () => {
       )
   );
 
-  whirlwind.animate({ x: [-20, 20] }, { easing: "LINEAR", duration: 5 });
-
   return whirlwind;
 };

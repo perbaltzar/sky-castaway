@@ -1,4 +1,4 @@
-import { create } from "@hiberworld/code-kit";
+import { create, Prefab } from "@hiberworld/code-kit";
 export enum ColliderForm {
   box = "box",
   sphere = "sphere",
@@ -22,6 +22,9 @@ export const createFloatBlock = ({ debug }: { debug?: boolean }) => {
     y: 4.5,
     accelerationVolume: {
       dir: [0, 1, 0],
+    },
+    vfxInVolume: {
+      prefabId: "fx_glow_particles_01" as Prefab,
     },
     rendering: debug
       ? {
@@ -47,7 +50,6 @@ export const flyBlock = () => {
     accelerationVolume: {
       dir: [0, 1, 0],
     },
-
     rendering: {
       meshID: "en_b_cube_01",
       materialID: "palette_01_blue",

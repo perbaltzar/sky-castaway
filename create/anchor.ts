@@ -15,17 +15,15 @@ export const createAnchor = () => {
     y: 2.1,
     x: -0.08,
   });
-  const ballons = create({ prefabId: "balloons_01", y: 2.3, rotY: 80 });
   group.add({ ...cyllinder });
   group.add({ ...cyllinder, rotX: 90, y: 1.5, scaleY: 1, z: -0.5 });
   group.add({ ...cyllinder, rotX: 125, scaleY: 1, z: -0.775, y: 0.5 });
   group.add({ ...cyllinder, rotX: -125, scaleY: 1, z: 0.775, y: 0.5 });
   group.add(ring);
-  group.add(ballons);
 
   group.animate(
-    { rotY: [0, 180, 360] },
-    { duration: 10, loop: "RESTART", easing: "EASE_IN_OUT_QUAD" }
+    { y: [0, 0.2] },
+    { duration: 1.5, loop: "REVERSE", easing: "EASE_IN_OUT_QUAD" }
   );
 
   return group;

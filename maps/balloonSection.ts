@@ -5,12 +5,15 @@ const balloon: NodeMap = [
   { x: 18, z: 5 },
   { x: 37, z: -7 },
   { x: 45, z: -15 },
-  { x: 75, z: -6 },
+  { x: 88, z: -4 },
 ];
 
-const box: NodeMap = [{ x: 14, z: -10, y: 2 }];
-const barrel: NodeMap = [{ x: 14, z: -6, y: -1 }];
-const anchor: NodeMap = [{ x: 16, z: -3.4, y: 4 }];
+const box: NodeMap = [{ x: 16, z: -10, y: 2, rotX: 3, rotZ: 70, rotY: 30 }];
+const barrel: NodeMap = [
+  { x: 16.5, z: -6, y: 0 },
+  { x: 16.5, z: -7.5, y: 0.4 },
+];
+const anchor: NodeMap = [{ x: 22, z: -2.4, y: 4, rotX: -30 }];
 const cloud: NodeMap = [
   { z: -10, scale: 5, x: 25, scaleY: 14, y: 1 },
   { z: -7, scale: 5, x: 25, scaleY: 7, y: -0 },
@@ -37,6 +40,10 @@ const cloud: NodeMap = [
   { z: -29, scale: 7, scaleX: 4, x: 50, scaleY: 7, y: 1.5, rotY: 40 },
   { z: -29, scale: 4, scaleX: 9, x: 60, scaleY: 9, y: 1.5, rotY: 120 },
 ];
+const thunder: NodeMap = [
+  { x: 3, z: 1, y: 9 },
+  { x: 42, z: 9, y: 13 },
+];
 
 export const balloonSectionMap = {
   cloud,
@@ -44,4 +51,5 @@ export const balloonSectionMap = {
   balloon,
   barrel,
   anchor,
+  thunder,
 };

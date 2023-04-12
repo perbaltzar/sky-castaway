@@ -53,11 +53,6 @@ export const createBoard = (options?: {
   });
   propeller.add(rotateGroup);
 
-  if (options?.checkpoint) {
-    const checkPoint = create({ prefabId: "checkpoint_01" });
-    group.add({ ...checkPoint, y: 0.6, z: 1, x: 3 });
-  }
-
   group.add(board);
   // group.add(hangingBoard);
   group.add({ ...board, x: 3.8, rotY: 180 });
@@ -85,7 +80,11 @@ export const createBoard = (options?: {
     rotZ: -boardRotation,
   });
 
-  // group.animate({ y: [0, 0.3] }, { duration: 3, easing: "EASE_IN_OUT_QUAD" });
+  if (options?.checkpoint) {
+    const checkPoint = create({ prefabId: "checkpoint_01" });
+    group.add({ ...checkPoint, y: 0.6, z: 1, x: 3, rotY: 180 });
+  }
+
   if (options?.spawnpoint) {
     group.add({ prefabId: "gpl_spawn_point_01", rotY: -90, z: 0, x: 0 });
   }
