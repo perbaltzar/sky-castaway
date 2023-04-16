@@ -40,10 +40,7 @@ const cloud: NodeMap = [
   { z: -29, scale: 7, scaleX: 4, x: 50, scaleY: 7, y: 1.5, rotY: 40 },
   { z: -29, scale: 4, scaleX: 9, x: 60, scaleY: 9, y: 1.5, rotY: 120 },
 ];
-const thunder: NodeMap = [
-  { x: 3, z: 1, y: 9 },
-  { x: 42, z: 9, y: 13 },
-];
+const thunder: NodeMap = [{ x: 42, z: 9, y: 13 }];
 
 export const balloonSectionMap = {
   cloud,

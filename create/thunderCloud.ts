@@ -28,25 +28,23 @@ export const createThunderCloud = (options?: { debug?: boolean }) => {
     scaleY: 4,
     dealDamageOnTouch: { amount: 90 },
     particleSystemParticle: {
-      lifetime: 2,
-      sizeStart: 0.05,
+      lifetime: 0.8,
+      sizeStart: 0.012,
       sizeEnd: 0,
     },
     particleSystemParticleMaterial: {
-      // particleTexture: "particle_sparkle_01",
-
       colorStart: [1 * (99 / 255), 1 * (145 / 255), 1 * (158 / 255), 1],
       colorEnd: [1 * (99 / 255), 1 * (145 / 255), 1 * (236 / 255), 1],
       blendMode: "ALPHA_BLEND",
     },
     particleSystemVelocityModifiers: { forceGravity: -6 },
     particleSystemEmitter: {
-      spawnRate: 200,
+      spawnRate: 120,
       inheritVelocity: 1,
       continuous: true,
-      size: [4, 0.1, 4],
+      size: [3, 0.1, 3],
       shape: "SPHERE",
-      offset: [0, 8, 0],
+      offset: [0, 2, 0],
       velocity: [0, -4, 0],
     },
   });

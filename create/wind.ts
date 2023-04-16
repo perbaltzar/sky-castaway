@@ -7,14 +7,14 @@ export const createWind = ({ debug }: { debug?: boolean }) => {
     const rotateOffset = (360 / 5 / 15) * index;
     return create({
       scale: 3,
+      y: (18 / 10) * index,
       rendering: {
         meshID: "en_b_torus_thin_01",
         materialID: "particle_cloud" as Material,
       },
     }).animate(
       {
-        y: [0, 4, 8],
-        scale: [0.1, 0.4, 1.1],
+        scale: [0.8, 1.2, 0.8],
         rotY: [0 + rotateOffset, 180 + rotateOffset, 360 + rotateOffset],
       },
       {
