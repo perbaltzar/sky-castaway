@@ -22,7 +22,7 @@ import { createWhirlwind } from "./create/whirlwind";
 import { createWind } from "./create/wind";
 import { balloonSectionMap } from "./maps/balloonSection";
 import { thunderSectionMap } from "./maps/thunderSection";
-import { windSectionMap } from "./maps/thunderSection copy";
+import { windSectionMap } from "./maps/windSection";
 import { addMapToSection } from "./utils/addMapToSection";
 
 const debug = false;
@@ -138,6 +138,7 @@ const windSection = createSection({
 });
 
 addMapToSection(windSection, balloon, windSectionMap.balloon);
+addMapToSection(windSection, cloud, windSectionMap.cloud);
 
 windSection.add({ ...upLift, x: 3, rotY: 0, z: -1, scaleZ: 7 });
 
@@ -248,6 +249,12 @@ windSection.add(
     x: 226,
   })
 );
+windSection.add({
+  ...checkpointBoard,
+  x: WIND_SECTION_X,
+  z: -67,
+  rotY: 20,
+});
 
 windSection.addTo(world);
 

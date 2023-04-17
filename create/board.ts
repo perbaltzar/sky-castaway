@@ -10,14 +10,6 @@ export const createBoard = (options?: {
   const group = create({ rotZ: boardRotation, rotY: -40 });
 
   const board = create({ prefabId: "en_m_wooden_platform_01_ceiling" });
-  // const hangingBoard = create({
-  //   prefabId: "en_m_wooden_platform_01_ceiling",
-  //   z: 2,
-  //   rotX: 90,
-  //   y: -1.5,
-  // }).animate({
-  //   rotY: [1, 100],
-  // });
 
   const propeller = create({ rotZ: -boardRotation });
   const rotateGroup = create();
@@ -43,7 +35,7 @@ export const createBoard = (options?: {
 
   rotateGroup.animate(
     { rotY: [0, 180, 360] },
-    { duration: 0.2, easing: "LINEAR", loop: "RESTART" }
+    { duration: 0.35, easing: "LINEAR", loop: "RESTART" }
   );
 
   propeller.add({
