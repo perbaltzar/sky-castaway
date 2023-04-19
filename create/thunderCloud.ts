@@ -4,6 +4,16 @@ import { ColliderForm } from "./flyBlock";
 const LIGHTNING_MATERIAL: Material = "palette_01_yellow";
 export const createThunderCloud = (options?: { debug?: boolean }) => {
   const cloudGroup = create({ y: 6 });
+  const audio = create({
+    audio: {
+      id: "a_fx_explosion_01",
+      volume: 0.5,
+      looping: true,
+      attenuationModel: "LINEAR_DISTANCE",
+      startPlayingDist: 70,
+      maxAttenuationDist: 50,
+    },
+  });
   const spinGroup = create();
   const moveGroup = create();
   const killCollider = create({
@@ -125,6 +135,7 @@ export const createThunderCloud = (options?: { debug?: boolean }) => {
     { rotY: [0, 180, 360] },
     { easing: "LINEAR", loop: "RESTART", duration: 7 }
   );
+  lightning.addMany(10, () => audio);
   spinGroup.add(darkCloud).add(lightning);
   moveGroup.add(spinGroup);
   moveGroup.add(killCollider);

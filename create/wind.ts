@@ -2,7 +2,22 @@ import { create, Material } from "@hiberworld/code-kit";
 import { ColliderForm } from "./flyBlock";
 
 export const createWind = ({ debug }: { debug?: boolean }) => {
-  const group = create({ rotX: 90, y: 4 });
+  const group = create({
+    rotX: 90,
+    y: 4,
+  });
+  const audio = create({
+    y: 13,
+    audio: {
+      id: "a_fx_blizzard_01",
+      volume: 0.3,
+      looping: true,
+      attenuationModel: "LINEAR_DISTANCE",
+      startPlayingDist: 70,
+      maxAttenuationDist: 50,
+    },
+  });
+  group.add(audio);
   group.addMany(18, (index) => {
     const rotateOffset = (360 / 5 / 15) * index;
     return create({

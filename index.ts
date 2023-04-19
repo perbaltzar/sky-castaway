@@ -24,11 +24,18 @@ import { balloonSectionMap } from "./maps/balloonSection";
 import { thunderSectionMap } from "./maps/thunderSection";
 import { windSectionMap } from "./maps/windSection";
 import { addMapToSection } from "./utils/addMapToSection";
+import { createManyBallons } from "./create/manyBalloons";
 
 const debug = false;
 const debugThunder = false;
 
 const world = create();
+// const music = create({
+//   audio: { id: "a_am_dark_heaven_01", looping: true },
+// }).addTo(world);
+// create({
+//   audio: { id: "a_mu_du_ar_inte_vard_mig_01", looping: true },
+// }).addTo(world);
 
 const scene: Scene = {
   root: world,
@@ -54,6 +61,7 @@ const upLift = create({
 const wind = createWind({ debug });
 const whirlwind = createWhirlwind();
 const thunderCloud = createThunderCloud({ debug: debugThunder });
+const manyBalloons = createManyBallons();
 
 // Decorations
 const barrel = createDebree("barrel_wood_01");
@@ -72,6 +80,12 @@ balloonSection.add({
   ...checkpointBoard,
   x: BALLOON_SECTION_X + 5,
   scale: 1.4,
+  y: -0.5,
+});
+balloonSection.add({
+  ...manyBalloons,
+  z: -3,
+  x: 7,
   y: -0.5,
 });
 balloonSection.add({
@@ -114,6 +128,13 @@ thunderSection.add({
   x: THUNDER_SECTION_X - 1,
   z: 7,
   rotY: 20,
+});
+
+thunderSection.add({
+  ...manyBalloons,
+  z: -5,
+  x: 1,
+  y: -0,
 });
 thunderSection.add({ ...whirlwind, x: 55, y: 14, z: 24 });
 addMapToSection(thunderSection, thunderCloud, thunderSectionMap.thunder);

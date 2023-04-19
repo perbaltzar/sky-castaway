@@ -24,7 +24,7 @@ export const createFloatBlock = ({ debug }: { debug?: boolean }) => {
       dir: [0, 1, 0],
     },
     vfxInVolume: {
-      prefabId: "fx_glow_particles_01" as Prefab,
+      prefabId: "fx_balloons_01" as Prefab,
     },
     rendering: debug
       ? {
